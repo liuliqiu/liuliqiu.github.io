@@ -1,1 +1,9 @@
-markdown: rdiscount
+name: mutcv
+url: http://blog.mutcv.com
+description: A blog about algorithm and game
+
+permalink: /:year/:month/:day/:title/
+paginate: 10
+
+gems: [jekyll-paginate]
+exclude: ['README.md']
