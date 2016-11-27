@@ -8,3 +8,5 @@ paginate: 10
 
 gems: [jekyll-paginate]
 exclude: ['README.md']
+sass:
+    style: compressed

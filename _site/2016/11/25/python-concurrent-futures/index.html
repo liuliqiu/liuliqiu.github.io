@@ -47,9 +47,7 @@
 	
 
 	<div class="post-content"><h2 id="section">介绍</h2>
-<p><a href="https://docs.python.org/3/library/concurrent.futures.html">concurrent.futures</a>是在[python 3.2][What’s New In Python 3.2]中加入到python标准库中的，不过在python2中也可以[安装使用][pupi futures]。<br />
-<a href="https://docs.python.org/3/library/concurrent.futures.html">concurrent.futures</a>提供了管理线程和进程一致的接口<br />
-这个库主要从<a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/package-summary.html">java.util.concurrent</a>包中得到灵感</p>
+<p><a href="https://docs.python.org/3/library/concurrent.futures.html">concurrent.futures</a>是在<a href="https://docs.python.org/3/whatsnew/3.2.html#pep-3148-the-concurrent-futures-module" title="What’s New In Python 3.2">python 3.2</a>中加入到python标准库中的，不过在python2中也可以<a href="https://pypi.python.org/pypi/futures">安装使用</a>。这个库来源于<a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/package-summary.html">java.util.concurrent</a>。提供了管理线程和进程多任务一致的接口。</p>
 
 <h3 id="executor">Executor</h3>
 <p>Executor是一个抽象基类，它提供了一组管理并发的接口。</p>
@@ -59,9 +57,9 @@
   <li><code class="highlighter-rouge">shutdown(wait=True)</code>: 通知正在执行的任务释放资源，wait为False的时候会直接返回，不过Python程序会等到所有任务释放资源后才退出。</li>
 </ul>
 
-<p>futures库实现了Executor的两个子类ThreadPoolExecutor和ProcessPoolExecutor。</p>
+<p>futures库实现了Executor的两个子类。</p>
 <ul>
-  <li>ThreadPoolExecutor: 因为<a href="https://docs.python.org/3/glossary.html#term-global-interpreter-lock">GIL</a>的限制，python中多线程不能完全发挥CPU的性能，所以ThreadPoolExecutor更适合I/O密集型的任务。</li>
+  <li>ThreadPoolExecutor: 因为<a href="https://docs.python.org/3/glossary.html#term-global-interpreter-lock">GIL</a>的限制，python中多线程不能完全发挥CPU的性能，所以更适合I/O密集型的任务。</li>
   <li>ProcessPoolExecutor: ProcessPoolExecutor使用了多进程，所以摆脱了<a href="https://docs.python.org/3/glossary.html#term-global-interpreter-lock">GIL</a>的限制，更适合CPU密集型的任务。但也因此只能使用<a href="https://docs.python.org/3/library/pickle.html#what-can-be-pickled-and-unpickled">pickable</a>的函数和数据。</li>
 </ul>
 
@@ -78,11 +76,54 @@
 
 <h3 id="ascompletedfs-timeoutnone"><code class="highlighter-rouge">as_completed(fs, timeout=None)</code></h3>
 <p>接收一个Future序列，按完成顺序返回Future对象。</p>
+
 <h3 id="waitfs-timeoutnone-returnwhenallcompleted"><code class="highlighter-rouge">wait(fs, timeout=None, return_when=ALL_COMPLETED)</code></h3>
 <p>接收一个Future序列，返回一个<code class="highlighter-rouge">(done, not_done)</code>的<code class="highlighter-rouge">tuple</code>。</p>
 
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">concurrent.futures</span>
+<span class="kn">import</span> <span class="nn">urllib.request</span>
+
+<span class="n">URLS</span> <span class="o">=</span> <span class="p">[</span><span class="s">'http://www.foxnews.com/'</span><span class="p">,</span>
+        <span class="s">'http://www.cnn.com/'</span><span class="p">,</span>
+        <span class="s">'http://europe.wsj.com/'</span><span class="p">,</span>
+        <span class="s">'http://www.bbc.co.uk/'</span><span class="p">,</span>
+        <span class="s">'http://some-made-up-domain.com/'</span><span class="p">]</span>
+
+<span class="c"># Retrieve a single page and report the URL and contents</span>
+<span class="k">def</span> <span class="nf">load_url</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="p">):</span>
+    <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="n">timeout</span><span class="p">)</span> <span class="k">as</span> <span class="n">conn</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">conn</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="c"># We can use a with statement to ensure threads are cleaned up promptly</span>
+<span class="k">with</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+    <span class="c"># Start the load operations and mark each future with its URL</span>
+    <span class="n">future_to_url</span> <span class="o">=</span> <span class="p">{</span><span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">load_url</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="mi">60</span><span class="p">):</span> <span class="n">url</span> <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">URLS</span><span class="p">}</span>
+    <span class="k">for</span> <span class="n">future</span> <span class="ow">in</span> <span class="n">concurrent</span><span class="o">.</span><span class="n">futures</span><span class="o">.</span><span class="n">as_completed</span><span class="p">(</span><span class="n">future_to_url</span><span class="p">):</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="n">future_to_url</span><span class="p">[</span><span class="n">future</span><span class="p">]</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">future</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
+        <span class="k">except</span> <span class="nb">Exception</span> <span class="k">as</span> <span class="n">exc</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">r generated an exception: </span><span class="si">%</span><span class="s">s'</span> <span class="o">%</span> <span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">exc</span><span class="p">))</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s">'</span><span class="si">%</span><span class="s">r page is </span><span class="si">%</span><span class="s">d bytes'</span> <span class="o">%</span> <span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">)))</span>
+</code></pre>
+</div>
+
+<h2 id="section-1">死锁</h2>
+<p>并发的时候肯定要考虑死锁的问题，不过使用Executor时要特别注意Excutor对象本身的资源占用也有可能会造成死锁。比如官方的例子:</p>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">wait_on_future</span><span class="p">():</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="nb">pow</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="c"># This will never complete because there is only one worker thread and</span>
+    <span class="c"># it is executing this function.</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">f</span><span class="o">.</span><span class="n">result</span><span class="p">())</span>
+
+<span class="n">executor</span> <span class="o">=</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">wait_on_future</span><span class="p">)</span>
+</code></pre>
+</div>
+
 <h2 id="tornadotornadoconcurrent"><a href="http://www.tornadoweb.org/en/stable/concurrent.html">tornado</a>中的使用</h2>
-<p>tornado在<a href="http://www.tornadoweb.org/en/stable/concurrent.html">tornado.concurrent</a>中实现了自定义的Future，和标准的Future有少许差别。不过tornado在处理异步程序时可以兼容标准库返回的Future对象。</p>
+<p>tornado在<a href="http://www.tornadoweb.org/en/stable/concurrent.html">tornado.concurrent</a>中实现了自定义的Future，和标准的Future有少许差别。不过tornado可以兼容使用标准库的Future对象。</p>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AsyncHandler</span><span class="p">(</span><span class="n">web</span><span class="o">.</span><span class="n">RequestHandler</span><span class="p">):</span>
     <span class="nd">@gen.coroutine</span>
@@ -92,6 +133,14 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre>
 </div>
+
+<p>参考资料:</p>
+<ol>
+  <li><a href="https://docs.python.org/3/whatsnew/3.2.html#pep-3148-the-concurrent-futures-module" title="What’s New In Python 3.2">What’s New In Python 3.2</a></li>
+  <li><a href="https://www.python.org/dev/peps/pep-3148/" title="PEP 3148">PEP 3148</a></li>
+  <li><a href="https://docs.python.org/3/library/concurrent.futures.html">concurrent.futures</a></li>
+  <li><a href="http://www.tornadoweb.org/en/stable/concurrent.html">tornado.concurrent</a></li>
+</ol>
 
 </div>
 
