@@ -1,6 +1,7 @@
 name: mutcv
 url: http://blog.mutcv.com
 description: A blog about algorithm and game
+colors: light
 
 permalink: /:year/:month/:day/:title/
 paginate: 10

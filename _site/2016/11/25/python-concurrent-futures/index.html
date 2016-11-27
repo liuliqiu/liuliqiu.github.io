@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  <title>python多任务库 concurrent.futures</title>
+  <meta name="viewport" content="width=device-width">
+
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="/assets/css/style.css" rel="stylesheet" />
+  <link href="/assets/css/colors-light.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+
+
+  <header id="header">
+    <h1><a href="/"><i class="icon-sun"></i> mutcv</a></h1>
+    <p>A blog about algorithm and game</p>
+  </header>
+
+
+
+  <div id="page">
+
+
+
+    <div id="sidebar">
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/feed.xml">RSS Feed</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="content">
+      <article class="post">
+
+	
+		<h1><a href="/2016/11/25/python-concurrent-futures/">python多任务库 concurrent.futures</a></h1>
+	
+
+	<div class="post-content"><h2 id="section">介绍</h2>
+<p><a href="https://docs.python.org/3/library/concurrent.futures.html">concurrent.futures</a>是在[python 3.2][What’s New In Python 3.2]中加入到python标准库中的，不过在python2中也可以[安装使用][pupi futures]。<br />
+<a href="https://docs.python.org/3/library/concurrent.futures.html">concurrent.futures</a>提供了管理线程和进程一致的接口<br />
+这个库主要从<a href="http://docs.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/package-summary.html">java.util.concurrent</a>包中得到灵感</p>
+
+<h3 id="executor">Executor</h3>
+<p>Executor是一个抽象基类，它提供了一组管理并发的接口。</p>
+<ul>
+  <li><code class="highlighter-rouge">submit(fn, *args, **kwargs)</code>: 返回一个Future对象。</li>
+  <li><code class="highlighter-rouge">map(fn, *iterables, timeout=None, chunksize=1)</code>: 提供了python内置的map函数一致的接口。chunksize用于ProcessPoolExcutor一次性提供多个数据给执行进程。</li>
+  <li><code class="highlighter-rouge">shutdown(wait=True)</code>: 通知正在执行的任务释放资源，wait为False的时候会直接返回，不过Python程序会等到所有任务释放资源后才退出。</li>
+</ul>
+
+<p>futures库实现了Executor的两个子类ThreadPoolExecutor和ProcessPoolExecutor。</p>
+<ul>
+  <li>ThreadPoolExecutor: 因为<a href="https://docs.python.org/3/glossary.html#term-global-interpreter-lock">GIL</a>的限制，python中多线程不能完全发挥CPU的性能，所以ThreadPoolExecutor更适合I/O密集型的任务。</li>
+  <li>ProcessPoolExecutor: ProcessPoolExecutor使用了多进程，所以摆脱了<a href="https://docs.python.org/3/glossary.html#term-global-interpreter-lock">GIL</a>的限制，更适合CPU密集型的任务。但也因此只能使用<a href="https://docs.python.org/3/library/pickle.html#what-can-be-pickled-and-unpickled">pickable</a>的函数和数据。</li>
+</ul>
+
+<h3 id="future">Future</h3>
+<ul>
+  <li><code class="highlighter-rouge">cancel()</code>: 取消当前任务的执行，如果已经执行了或者不能取消时返回False，否则返回True。</li>
+  <li><code class="highlighter-rouge">cancelled()</code>: 判断是否成功取消。</li>
+  <li><code class="highlighter-rouge">running()</code>: 判断是否正在运行。</li>
+  <li><code class="highlighter-rouge">done()</code>: 判断是否成功取消或者执行完毕。</li>
+  <li><code class="highlighter-rouge">result(timeout=None)</code>: 获取执行结果。</li>
+  <li><code class="highlighter-rouge">exception(timeout=None)</code>: 获取执行中抛出的异常。</li>
+  <li><code class="highlighter-rouge">add_done_callback(fn)</code>: 添加回调函数。</li>
+</ul>
+
+<h3 id="ascompletedfs-timeoutnone"><code class="highlighter-rouge">as_completed(fs, timeout=None)</code></h3>
+<p>接收一个Future序列，按完成顺序返回Future对象。</p>
+<h3 id="waitfs-timeoutnone-returnwhenallcompleted"><code class="highlighter-rouge">wait(fs, timeout=None, return_when=ALL_COMPLETED)</code></h3>
+<p>接收一个Future序列，返回一个<code class="highlighter-rouge">(done, not_done)</code>的<code class="highlighter-rouge">tuple</code>。</p>
+
+<h2 id="tornadotornadoconcurrent"><a href="http://www.tornadoweb.org/en/stable/concurrent.html">tornado</a>中的使用</h2>
+<p>tornado在<a href="http://www.tornadoweb.org/en/stable/concurrent.html">tornado.concurrent</a>中实现了自定义的Future，和标准的Future有少许差别。不过tornado在处理异步程序时可以兼容标准库返回的Future对象。</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">AsyncHandler</span><span class="p">(</span><span class="n">web</span><span class="o">.</span><span class="n">RequestHandler</span><span class="p">):</span>
+    <span class="nd">@gen.coroutine</span>
+    <span class="k">def</span> <span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">with</span> <span class="n">ThreadPoolExecutor</span><span class="p">(</span><span class="n">max_workers</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="k">as</span> <span class="n">executor</span><span class="p">:</span>
+            <span class="n">resp</span> <span class="o">=</span> <span class="k">yield</span> <span class="n">executor</span><span class="o">.</span><span class="n">submit</span><span class="p">(</span><span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">,</span> <span class="s">"http://example.com"</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">resp</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+</code></pre>
+</div>
+
+</div>
+
+	<p class="meta">Posted on <span class="postdate">Nov 25, 2016</span></p>
+
+</article>
+    </div>
+
+  </div>
+
+  <footer id="footer">
+    <p class="copyright">Copyright &copy; 2016 mutcv. Powered by <a href="http://jekyllrb.com">Jekyll</a>, theme by <a href="http://www.webmaster-source.com">Matt Harzewski</a></p>
+  </footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+  <script src="/assets/js/jquery.mobilemenu.min.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      $('#sidebar nav ul').mobileMenu({'topOptionText': 'Menu', 'prependTo': '#sidebar nav'});
+    });
+  </script>
+
+</body>
+</html>
