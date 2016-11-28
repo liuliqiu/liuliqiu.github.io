@@ -1,6 +1,6 @@
 ---
 layout: post
-title: python多任务库 concurrent.futures
+title: python多任务库concurrent.futures
 ---
 
 ## 介绍
@@ -89,10 +89,10 @@ class AsyncHandler(web.RequestHandler):
 ```
 
 参考资料:
-1. [What's New In Python 3.2][python 3.2]
-2. [PEP 3148]
-3. [concurrent.futures]
-4. [tornado.concurrent]
+1. [What's New In Python 3.2][python 3.2]  
+2. [PEP 3148]  
+3. [concurrent.futures]  
+4. [tornado.concurrent]  
 
 [python 3.2]: https://docs.python.org/3/whatsnew/3.2.html#pep-3148-the-concurrent-futures-module "What’s New In Python 3.2"
 [PEP 3148]: https://www.python.org/dev/peps/pep-3148/ "PEP 3148"
