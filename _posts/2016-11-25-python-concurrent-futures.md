@@ -61,7 +61,7 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
 ```
 
 ## 死锁
-并发的时候肯定要考虑死锁的问题，不过使用Executor时要特别注意Excutor对象本身的资源占用也有可能会造成死锁。比如官方的例子:
+并发的时候肯定要考虑死锁的问题，不过使用Executor时要特别注意Excutor对象本身的资源占用也有可能会造成死锁。比如官方的例子:  
 ```python
 def wait_on_future():
     f = executor.submit(pow, 5, 2)
