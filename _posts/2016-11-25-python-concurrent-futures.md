@@ -88,7 +88,7 @@ class AsyncHandler(web.RequestHandler):
         self.write(resp.text)
 ```
 
-参考资料:
+参考资料:  
 1. [What's New In Python 3.2][python 3.2]  
 2. [PEP 3148]  
 3. [concurrent.futures]  
