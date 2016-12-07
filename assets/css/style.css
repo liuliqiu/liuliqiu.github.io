@@ -115,13 +115,13 @@ h3 {
 
 /*** Structure ***/
 #page {
-	width: 600px;
+	width: 800px;
 	margin: 0 auto;
 	position: relative;
 }
 
 #header {
-	width: 600px;
+	width: 800px;
 	margin: 40px auto 50px auto;
 }
 #header h1 {
@@ -133,7 +133,7 @@ h3 {
 }
 
 #footer {
-	width: 600px;
+	width: 800px;
 	margin: 50px auto 20px auto;
 	padding-top: 10px;
 	font-size: 0.85em;
@@ -141,7 +141,7 @@ h3 {
 }
 
 #content {
-	width: 600px;
+	width: 800px;
 	margin: 0 auto;
 }
 
