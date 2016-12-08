@@ -1,21 +1,21 @@
 ---
 layout: post
-title: python多任务库concurrent.futures
+title: Python多任务库concurrent.futures
 ---
 
 ## 介绍
-[concurrent.futures]是在[python 3.2]中加入到python标准库中的，不过在python2中也可以[安装使用][pypi futures]。这个库来源于[java.util.concurrent]。提供了管理线程和进程多任务一致的接口。  
+[concurrent.futures]是在[python 3.2]中加入到Python标准库中的，不过在Python2中也可以[安装使用][pypi futures]。这个库来源于[java.util.concurrent]。提供了管理线程和进程多任务一致的接口。  
 
 ### Executor
 Executor是一个抽象基类，它提供了一组管理并发的接口。  
 
 - `submit(fn, *args, **kwargs)`: 返回一个Future对象。
-- `map(fn, *iterables, timeout=None, chunksize=1)`: 提供了python内置的map函数一致的接口。chunksize用于ProcessPoolExcutor一次性提供多个数据给执行进程。
+- `map(fn, *iterables, timeout=None, chunksize=1)`: 提供了Python内置的map函数一致的接口。chunksize用于ProcessPoolExcutor一次性提供多个数据给执行进程。
 - `shutdown(wait=True)`: 通知正在执行的任务释放资源，wait为False的时候会直接返回，不过Python程序会等到所有任务释放资源后才退出。
 
 futures库实现了Executor的两个子类。  
 
-- ThreadPoolExecutor: 因为[GIL]的限制，python中多线程不能完全发挥CPU的性能，所以更适合I/O密集型的任务。
+- ThreadPoolExecutor: 因为[GIL]的限制，Python中多线程不能完全发挥CPU的性能，所以更适合I/O密集型的任务。
 - ProcessPoolExecutor: ProcessPoolExecutor使用了多进程，所以摆脱了[GIL]的限制，更适合CPU密集型的任务。但也因此只能使用[pickable][What can be pickled and unpickled]的函数和数据。
 
 ### Future
