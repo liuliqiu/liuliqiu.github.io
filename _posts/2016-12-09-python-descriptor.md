@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Python描述器
+tags:
+- Python
 ---
 
 # 描述器协议

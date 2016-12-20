@@ -1,6 +1,9 @@
 ---
 layout: post
 title: Python多任务库concurrent.futures
+tags:
+- Python
+- concurrency
 ---
 
 ## 介绍
