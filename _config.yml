@@ -1,7 +1,8 @@
 name: mutcv
 title: mutcv
 url: http://blog.mutcv.com
-description: A blog about algorithm and game
+keywords: Python
+description: A blog about Python
 colors: dark
 
 permalink: /:year/:month/:day/:title/
