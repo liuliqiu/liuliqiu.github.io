@@ -6,6 +6,8 @@ colors: dark
 permalink: /:year/:month/:day/:title/
 paginate: 10
 
+g_analytics: "UA-89493312-1"
+
 gems: [jekyll-paginate]
 exclude: ['README.md']
 sass:
