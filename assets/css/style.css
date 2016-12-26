@@ -151,24 +151,33 @@ h3 {
 	margin: 0 auto;
 }
 
-#sidebar {
-	position: absolute;
-	text-align: right;
-	width: 160px;
-	top: 0;
-	left: -240px;
+header{
+    display:flex;
+    justify-content:space-between;
 }
 
-#sidebar li {
+header nav ul{
+    display:flex;
+    padding:0;
+    text-align:center;
+}
+
+header nav li {
 	list-style: none;
-	margin: 2px 0;
+    width:30px;
+	padding: 2px 4px 0 0;
 }
 
-#sidebar a {
+header nav li i{
+    width:30px;
+    display:inline-block;
+}
+
+header nav a {
 	border: none;
 	font-family: "Helvetica Neue", "Helvetica", serif;
 	font-size: 1.2em;
-	padding: 2px 4px;
+    width:30px;
 }
 
 
@@ -244,21 +253,7 @@ img.center {
 		padding-right: 10px;
 	}
 
-	#sidebar {
-		position: relative;
-		text-align: left;
-		width: 100%;
-		left: 0;
-		margin: 10px 10px 20px 10px;
-	}
-
-	#sidebar nav select.mnav {
-		display: block;
-		margin-bottom: 15px;
-	}
-
 }
-
 
 
 /*** Icons ***/
