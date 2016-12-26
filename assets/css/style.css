@@ -26,7 +26,13 @@ blockquote:before, blockquote:after, q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+    border: 1px solid #ddd;
 }
+table td, table th {
+    padding:0 5px;
+    border: 1px solid #ddd;
+}
+
 
 
 
@@ -187,6 +193,7 @@ article img {
 	display: block;
 	text-align: center;
 	margin: 0 auto 1em auto;
+    max-width:800px;
 }
 
 article .meta {
