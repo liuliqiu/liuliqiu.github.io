@@ -11,6 +11,6 @@ paginate: 10
 g_analytics: "UA-89493312-1"
 
 gems: [jekyll-paginate]
-exclude: ['README.md']
+exclude: ['README.md', 'src']
 sass:
     style: compressed
