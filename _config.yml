@@ -3,7 +3,7 @@ title: mutcv
 url: http://blog.mutcv.com
 keywords: Python
 description: A blog about Python
-colors: dark
+colors: white
 
 permalink: /:year/:month/:day/:title/
 paginate: 10
