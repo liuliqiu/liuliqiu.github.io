@@ -3,6 +3,8 @@ layout: post
 title: Python协程coroutine(1)
 tags:
 - Python
+- coroutine
+- concurrency
 ---
 
 

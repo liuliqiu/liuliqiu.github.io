@@ -69,6 +69,12 @@ small { font-size: 0.85em; }
 sup { vertical-align: super; font-size: 0.85em; }
 sub { vertical-align: sub; font-size: 0.85em; }
 
+.highlight table {
+    width: 100%;
+}
+.highlight table td.gutter{
+    width: 20px;
+}
 pre {
     line-height:1.3;
 }
