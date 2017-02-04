@@ -5,10 +5,5 @@ Generators - semicoroutines
 Communicating sequential processes  
 continuation    保存当前上下文  
 
-- 2.3 generator             PEP255      PEP288      PEP325
-- 2.5 generator enhanced    PEP342
-- 3.3 yield from            PEP380
-- 3.4 asyncio               PEP3156
-- 3.5 async/await           PEP492
-
 [并发之痛Thread,Goroutine,Actor]: http://jolestar.com/parallel-programming-model-thread-goroutine-actor/
+
