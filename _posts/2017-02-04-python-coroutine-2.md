@@ -124,11 +124,11 @@ except StopIteration as e:
 ## 参考资料
 
 1. [Python源码剖析] 8.1 Python虚拟机中的执行环境
-1. [PEP255]
-1. [PEP342]
-1. [PEP380]
-1. [PEP3156]
-1. [PEP492]
+1. [PEP255] : Simple Generators
+1. [PEP342] : Coroutines via Enhanced Generators
+1. [PEP380] : Syntax for Delegating to a Subgenerator
+1. [PEP3156] : Asynchronous IO Support Rebooted: the "asyncio" Module
+1. [PEP492] : Coroutines with async and await syntax
 
 
 [PEP255]: https://www.python.org/dev/peps/pep-0255/
