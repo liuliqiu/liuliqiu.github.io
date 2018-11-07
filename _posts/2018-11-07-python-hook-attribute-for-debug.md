@@ -36,9 +36,23 @@ print("after", Test._test)
 ```
 
 输出
+
 ```
 before ('xxxxx',)
 setattr _test ('xxxxx', 'yyyyy') Test
 after ('xxxxx', 'yyyyy')
+```
+
+### 结果
+
+最后定位到问题在于 `pickle.loads` 了老版本的二进制数据，`Document` 类定了 `__setstate__` 方法，在 `loads` 根据数据改变了 `_fields_ordered` 的值。
+
+```python
+    def __setstate__(self, data):
+        ...
+        if '_fields_ordered' in data:
+            setattr(type(self), '_fields_ordered', data['_fields_ordered'])
+        ...
+
 ```
 
