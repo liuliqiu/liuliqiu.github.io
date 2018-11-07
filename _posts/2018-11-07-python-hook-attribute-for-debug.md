@@ -24,9 +24,9 @@ tags:
 
 ```python
 class Meta(type):
-    def __setattr__(self, name, value):
-        print("setattr", name, value, self.__name__)
-        super(Meta, self).__setattr__(name, value)
+    def __setattr__(cls, name, value):
+        print("setattr", name, value, cls.__name__)
+        super(Meta, cls).__setattr__(name, value)
 
 class Test(object, metaclass=Meta):
     _test = ("xxxxx", )
