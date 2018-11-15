@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Marathon</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+      td{
+        width: 10%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+    <table summary="marathon">
+      <tr>
+        <th></th>
+        <th v-for="distance in distance_list" v-text="distance"></th>
+      </tr>
+      <tr v-for="time in time_list">
+        <th v-text='minute(time)'></th>
+        <td v-for='distance in distance_list' v-text='hour(parseInt(time * distance))'></td>
+      </tr>
+    </table>
+    </div>
+  <script >
+    (function(){
+      var time_list = [
+      //180, 185, 190, 195, 200, 205, 210, 215, 220, 225, 230, 235,
+      /*240, 245, 250, 255, 260, 265, */270, 275, 280, 285, 290, 295,
+      300, 305, 310, 315, 320, 325, 330, 335, 340, 345, 350, 355,
+      360, 375, 390, 405, 420, 450,
+      ];
+      var distance_list = [3.5, 5, 7, 10, 15, 21.0975, 30, 42.195]
+      console.log(time_list, distance_list);
+      new Vue({
+          el: '#app',
+          data: {
+              time_list: time_list,
+              distance_list: distance_list,
+          },
+          methods: {
+              minute: function(time){
+                 return parseInt(time/60) + ':' + this.pad(time % 60);
+              },
+              pad: function(v){
+                return (v + '').padStart(2, '0')
+              },
+              hour: function(time){
+                 return parseInt(time/3600) + ':' + this.pad(parseInt((time/60) % 60)) + ':' + this.pad(time % 60);
+              },
+          }
+      })
+    })();
+  </script>
+  </body>
+</html>
