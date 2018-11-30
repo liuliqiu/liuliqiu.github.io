@@ -161,8 +161,8 @@ if __name__ == "__main__":
 [Python Data model: metaclasses]: https://docs.python.org/3/reference/datamodel.html#metaclasses
 [PEP 3115]: https://www.python.org/dev/peps/pep-3115/
 [Expert Python Porgramming - Second Edition]: https://book.douban.com/subject/26791781/
-[什么是metaclass]: http://pyzh.readthedocs.io/en/latest/python-questions-on-stackoverflow.html#id4
+[什么是metaclass]: https://pyzh.readthedocs.io/en/latest/python-questions-on-stackoverflow.html#id4
 [peewee 2.8.5 Model]: https://github.com/coleifer/peewee/blob/2.8.5/peewee.py#L4733
-[what is a metaclass in python]: http://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python
-[深入理解Python中的元类(metaclass)]: http://blog.jobbole.com/21351/
+[what is a metaclass in python]: https://stackoverflow.com/questions/100003/what-is-a-metaclass-in-python
+[深入理解Python中的元类(metaclass)]: https://blog.jobbole.com/21351/
 

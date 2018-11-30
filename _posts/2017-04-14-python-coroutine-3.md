@@ -136,7 +136,7 @@ end
 
 [Stackless Python]: https://bitbucket.org/stackless-dev/stackless/wiki/Home
 [what is Stackless]: https://cosmicpercolator.com/2016/02/02/what-is-stackless/
-[Stackless Python并发式编程介绍]: http://gashero.yeax.com/?p=30
+[Stackless Python并发式编程介绍]: https://gashero.yeax.com/?p=30
 [why stackless]: https://github.com/grant-olson/why_stackless
 [greenlet]: https://greenlet.readthedocs.io/en/latest/
 [PEP219]: https://www.python.org/dev/peps/pep-0219/

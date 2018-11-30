@@ -40,11 +40,11 @@ futures库实现了Executor的两个子类。
 import concurrent.futures
 import urllib.request
 
-URLS = ['http://www.foxnews.com/',
-        'http://www.cnn.com/',
-        'http://europe.wsj.com/',
-        'http://www.bbc.co.uk/',
-        'http://some-made-up-domain.com/']
+URLS = ['https://www.foxnews.com/',
+        'https://www.cnn.com/',
+        'https://europe.wsj.com/',
+        'https://www.bbc.co.uk/',
+        'https://some-made-up-domain.com/']
 
 # Retrieve a single page and report the URL and contents
 def load_url(url, timeout):
@@ -87,7 +87,7 @@ class AsyncHandler(web.RequestHandler):
     @gen.coroutine
     def get(self):
         with ThreadPoolExecutor(max_workers=1) as executor:
-            resp = yield executor.submit(requests.get, "http://example.com")
+            resp = yield executor.submit(requests.get, "https://example.com")
         self.write(resp.text)
 ```
 
@@ -103,8 +103,8 @@ class AsyncHandler(web.RequestHandler):
 [pypi futures]: https://pypi.python.org/pypi/futures
 [github futures]: https://github.com/agronholm/pythonfutures
 [What can be pickled and unpickled]: https://docs.python.org/3/library/pickle.html#what-can-be-pickled-and-unpickled
-[java.util.concurrent]: http://docs.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/package-summary.html
-[tornado.concurrent]: http://www.tornadoweb.org/en/stable/concurrent.html
+[java.util.concurrent]: https://docs.oracle.com/javase/1.5.0/docs/api/java/util/concurrent/package-summary.html
+[tornado.concurrent]: https://www.tornadoweb.org/en/stable/concurrent.html
 [GIL]: https://docs.python.org/3/glossary.html#term-global-interpreter-lock
-[dalkescientific-concurrent.futures]: http://www.dalkescientific.com/writings/diary/archive/2012/01/19/concurrent.futures.html
+[dalkescientific-concurrent.futures]: https://www.dalkescientific.com/writings/diary/archive/2012/01/19/concurrent.futures.html
 
