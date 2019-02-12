@@ -299,3 +299,6 @@ img.center {
 .icon-anchor {
 	font-size: 65%;
 }
+pre.highlight {
+  border: none;
+}
