@@ -47,21 +47,21 @@ logging.warning("warning message")
 ```
 这样日志就可以同时输出到日志文件和stdout。Python在子模块[logging.handlers][Library logging.handlers]中提供了大量的Handler类，用于以不同的方式处理日志。  
 
-| Handler |  说明|
-| ------  | ------ |
-| StreamHandler | 将日志输出到流中，比如stdout、stderr、file-like object |
-| FileHandler | 将日志输出到文件中 |
+| Handler |  说明 |  |
+| ------  | ------ |------ |
+| StreamHandler | 将日志输出到流中，比如stdout、stderr、file-like object |  |
+| FileHandler | 将日志输出到文件中 |  |
 | NullHandler | 不输出日志、用于库开发者设置默认日志Handler | Python3.1+|
-| WatchedFileHandler | 当日志文件被修改时，重新打开日志文件的FileHandler |
-| RotatingFileHandler | 当日志文件达到maxBytes时重命名原有日志文件，新打开一个日志文件输出 |
-| TimeRotatingFileHandler | 按时间轮转日志文件 |
-| SocketHandler | 将日志通过TCP协议输出 |
-| DatagramHandler | 将日志通过UDP协议输出 |
-| SysLogHandler | 将日志输出到Unix的syslog |
-| NTEventLogHandler | 将日志输出到Windows的日志服务 |
-| SMTPHandler | 通过邮件的方式输出日志 |
-| MemoryHandler | 将日志暂存在内存中，然后周期性的将日志传入到target中 |
-| HTTPHandler | 通过HTTP请求的方式输出日志 |
+| WatchedFileHandler | 当日志文件被修改时，重新打开日志文件的FileHandler |  |
+| RotatingFileHandler | 当日志文件达到maxBytes时重命名原有日志文件，新打开一个日志文件输出 |  |
+| TimeRotatingFileHandler | 按时间轮转日志文件 |  |
+| SocketHandler | 将日志通过TCP协议输出 |  |
+| DatagramHandler | 将日志通过UDP协议输出 |  |
+| SysLogHandler | 将日志输出到Unix的syslog |  |
+| NTEventLogHandler | 将日志输出到Windows的日志服务 |  |
+| SMTPHandler | 通过邮件的方式输出日志 |  |
+| MemoryHandler | 将日志暂存在内存中，然后周期性的将日志传入到target中 |  |
+| HTTPHandler | 通过HTTP请求的方式输出日志 |  |
 | QueueHandler | 将请求输出到一个队列中，然后使用QueueListener监听队列将日志传递给其他Handler | Python3.2+ |
 
 这些Handler包括了各种各样的输出方式，另外还有MemoryHandler和QueueHandler可以与其他的Handler搭配实现非常灵活的日志处理。

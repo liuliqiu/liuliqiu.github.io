@@ -212,6 +212,7 @@ article h1 a.anchor {
 }
 
 article img {
+  width: 100%;
 	display: block;
 	text-align: center;
 	margin: 0 auto 1em auto;
