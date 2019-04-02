@@ -6,7 +6,6 @@ layout: null
   {% for post in site.posts limit:10 %}
   <url>
     <loc>{{ post.url | prepend: site.baseurl | prepend: site.url }}</loc>
-    <lastmod>{{ post.date }}</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   {% endfor %}
