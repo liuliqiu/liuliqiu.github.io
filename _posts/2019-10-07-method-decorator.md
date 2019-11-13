@@ -43,11 +43,18 @@ class Wrap(object):
 试一下
 
 ```python
-test_view = Wrap(test_view)
-TestView = Wrap(test_view)
+@Wrap
+def test_view(request, *args, **kwargs):
+  # do something
+  pass
+
+class TestView:
+  @Wrap
+  def get(self, request, *args, **kwargs):
+    # do something
+    pass
 test_view("request_function")   # request_function () {}
 TestView().get("request_method") # request_method () {}
-
 ```
 
 嗯，逻辑没问题，但是不通用，每一个装饰器都写这么一大段代码，麻烦。所以我们更进一步，写一个装饰器的装饰器，任何使用了这个装饰器的装饰器都既可以用于函数也可以用于方法。
