@@ -2,8 +2,8 @@ name: mutcv
 title: mutcv
 url: http://blog.mutcv.com
 keywords: Python
-description: A blog about Python
-colors: white
+description: 吾日三省吾身
+colors: mutcv
 
 permalink: /:year/:month/:day/:title/
 paginate: 10
