@@ -6,6 +6,8 @@ tags:
 - note
 ---
 
+
+
 ### 结构
 
 lua 中 string 分成两种 short string 和 long string，两者都使用 `TString ` 结构存储数据，两者的 tag 都为`LUA_TSTRING`，而 variant 分别为1和2。
@@ -54,6 +56,8 @@ typedef struct TString {
 
 `cast_charp` 将 `ts` 转换为 `char *` 类型，加上 `sizeof(TString)` 将指针移到 `TString` 结构后面。
 
+
+
 ### 新建字符串
 
 ([lstring.c](https://github.com/lua/lua/blob/v5.4-beta/lstring.c#L228-L242))
@@ -83,6 +87,8 @@ TString *luaS_newlstr (lua_State *L, const char *str, size_t l) {
 ```c
 #define sizelstring(l)  (sizeof(TString) + ((l) + 1) * sizeof(char))
 ```
+
+
 
 ### long string
 
@@ -234,6 +240,8 @@ void luaX_init (lua_State *L) {
 ```c
 #define isreserved(s)	((s)->tt == LUA_TSHRSTR && (s)->extra > 0)
 ```
+
+
 
 ### 缓存
 
