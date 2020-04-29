@@ -12,3 +12,11 @@ title: My Blog
     </li>
     {% endfor %}
 </ul>
+
+<ul class="tags">
+    {% for tag in site.tags %}
+    <li>
+        {{ tag }}
+    </li>
+    {% endfor %}
+</ul>
