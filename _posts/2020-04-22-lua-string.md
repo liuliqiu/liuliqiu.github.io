@@ -84,6 +84,8 @@ TString *luaS_newlstr (lua_State *L, const char *str, size_t l) {
 
 否则先检查长度是否超过上限。然后创建`TString`结构，最后将字符串复制到 `TString`结构后面。
 
+([lstring.h](https://github.com/lua/lua/blob/v5.4-beta/lstring.h#L22))
+
 ```c
 #define sizelstring(l)  (sizeof(TString) + ((l) + 1) * sizeof(char))
 ```
