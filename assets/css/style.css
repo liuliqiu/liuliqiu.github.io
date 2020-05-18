@@ -303,3 +303,10 @@ img.center {
 pre.highlight {
   border: none;
 }
+
+
+/*** omar ***/
+code.language-plaintext.highlighter-rouge {
+    background-color: rgba(9, 30, 66, 0.08);
+    padding: 0px 4px;
+}
