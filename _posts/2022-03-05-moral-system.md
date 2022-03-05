@@ -17,7 +17,7 @@ tags:
 
 所以人们建立了一些体系，来规范大家的行为。在美国最高法院大楼的东侧门楣上，有三个浮雕分别是孔子、摩西、梭伦。这三个人就分别是三种体系的代表性人物。
 
-![The east facade of the Supreme Court of the United States by Jeff Kubina.](2022-03-05-moral-system.assets/Supreme_court_east_facade.jpeg)
+![The east facade of the Supreme Court of the United States by Jeff Kubina.](https://upload.wikimedia.org/wikipedia/commons/d/dc/Supreme_court_east_facade.jpg)
 
 摩西是亚伯拉罕诸教中的先知，十诫是由摩西散布的。在宗教中，行为准则是全知全能的上帝的旨意。你的任何行为，上帝都会知晓，而最后上帝也会给予你报应。某些宗教会告诉你好人会上天堂，而坏人会下地狱。这就是宗教这个体系，当然这套体系依赖于人的信仰，但你不信教时，这套体系就无法影响你。而这个世界正在越来越世俗化。
 
