@@ -23,50 +23,50 @@ tags:
 ### The Boy in the Striped Pajamas
 
 《穿条纹睡衣的男孩》2006年出版。这一部军官小孩视角下的集中营。这一本篇幅不太长，英文比较简单，也适合入门。
-![The_Boy_in_the_Striped_Pajamas_novel.png](/assets/image/english_novel_1/The_Boy_in_the_Striped_Pajamas_novel.png)![The_Boy_in_the_Striped_Pajamas_movie.png](/assets/image/english_novel_1/The_Boy_in_the_Striped_Pajamas_movie.png)
+![The_Boy_in_the_Striped_Pajamas_novel.png](/assets/image/english_novel_1/The_Boy_in_the_Striped_Pajamas_novel.png =x400)![The_Boy_in_the_Striped_Pajamas_movie.png](/assets/image/english_novel_1/The_Boy_in_the_Striped_Pajamas_movie.png =x400)
 
 ### Flipped
 《怦然心动》 2001年的小说，一个关于朦胧初恋的故事，很久之前看过电影。但是看书发现，书里面很重要的是个人成长，当初看电影时候没有体会到。
-![Flipped_novel.png](/assets/image/english_novel_1/Flipped_novel.png)![Flipped_movie.png](/assets/image/english_novel_1/Flipped_movie.png)
+![Flipped_novel.png](/assets/image/english_novel_1/Flipped_novel.png =x400)![Flipped_movie.png](/assets/image/english_novel_1/Flipped_movie.png =x400)
 
 
 ### The Help
 《相助》2009年出版。讲述的是民权运动时期南方黑人帮佣的故事，里面黑人俚语很多，所以需要习惯一下。
-![The_Help_novel.png](/assets/image/english_novel_1/The_Help_novel.png)![The_Help_movie.png](/assets/image/english_novel_1/The_Help_movie.png)
+![The_Help_novel.png](/assets/image/english_novel_1/The_Help_novel.png =x400)![The_Help_movie.png](/assets/image/english_novel_1/The_Help_movie.png =x400)
 
 ### Are You There God? It's Me, Margaret
 《上帝在吗？我是玛格丽特》是一部1970年的作品，最近刚改编成电影。主要讲青春期少女的困惑，故事比较简单，很容易读。
-![Are_you_There_god_It's_Me_Margaret_novel.png](/assets/image/english_novel_1/Are_you_There_god_It's_Me_Margaret_novel.png)![Are_you_There_god_It's_Me_Margaret_movie.png](/assets/image/english_novel_1/Are_you_There_god_It's_Me_Margaret_movie.png)
+![Are_you_There_god_It's_Me_Margaret_novel.png](/assets/image/english_novel_1/Are_you_There_god_It's_Me_Margaret_novel.png =x400)![Are_you_There_god_It's_Me_Margaret_movie.png](/assets/image/english_novel_1/Are_you_There_god_It's_Me_Margaret_movie.png =x400)
 
 ### The Perks of Being a Wallflower
 《壁花少年》99年的小说，一个敏感而抑郁的少年的高一生活。这本书是书信体，形式上是主角写的信，所以比较容易读。主角一年里面读了很多英文经典，所以能得到一份书单。而且能从信上体验到主角英文表达的成长。
-![The_Perks_of_Being_a_Wallflower_novel.png](/assets/image/english_novel_1/The_Perks_of_Being_a_Wallflower_novel.png)![The_Perks_of_Being_a_Wallflower_movie.png](/assets/image/english_novel_1/The_Perks_of_Being_a_Wallflower_movie.png)
+![The_Perks_of_Being_a_Wallflower_novel.png](/assets/image/english_novel_1/The_Perks_of_Being_a_Wallflower_novel.png =x400)![The_Perks_of_Being_a_Wallflower_movie.png](/assets/image/english_novel_1/The_Perks_of_Being_a_Wallflower_movie.png =x400)
 
 
 ### The Fault in Our Stars
 电影是《星运里的错》，内地版本起名《无比美妙的痛苦》，台版叫《生命中的美好缺憾》。书名出自莎士比亚的《Julius Caesar》，书里面有引用。癌症病人的爱情故事，面对不可逃避的死亡。
 
-![The_Fault_in_Our_Stars_novel.png](/assets/image/english_novel_1/The_Fault_in_Our_Stars_novel.png)![The_Fault_in_Our_Stars_movie.png](/assets/image/english_novel_1/The_Fault_in_Our_Stars_movie.png)
+![The_Fault_in_Our_Stars_novel.png](/assets/image/english_novel_1/The_Fault_in_Our_Stars_novel.png =x400)![The_Fault_in_Our_Stars_movie.png](/assets/image/english_novel_1/The_Fault_in_Our_Stars_movie.png =x400)
 
 
 ### Me Before You
 《遇见你之前》2012年的小说，电影是龙妈主演。《星运里的错》讲的是面对死亡时的爱情，而《遇见你之前》讲的则是生不如死的人。主题就是珍惜生命，好好活。剧情算是比较容易读懂，但是主角有时候的英式幽默比较让人费解。每个词都懂，但合起来不知道什么意思。
-![Me_Before_You_novel.png](/assets/image/english_novel_1/Me_Before_You_novel.png)![Me_Before_You_movie.png](/assets/image/english_novel_1/Me_Before_You_movie.png)
+![Me_Before_You_novel.png](/assets/image/english_novel_1/Me_Before_You_novel.png =x400)![Me_Before_You_movie.png](/assets/image/english_novel_1/Me_Before_You_movie.png =x400)
 
 
 ### One Day
 《一天》2009年的小说，讲的是男女主在每年的圣斯威逊节这一天的故事。英国传说圣斯威逊节如果下雨，后40天也会下雨，天晴也是。这本书主要让人感受到现代人的空虚。
-![One_day_novel.png](/assets/image/english_novel_1/One_day_novel.png)![One_day_movie.png](/assets/image/english_novel_1/One_day_movie.png)
+![One_day_novel.png](/assets/image/english_novel_1/One_day_novel.png =x400)![One_day_movie.png](/assets/image/english_novel_1/One_day_movie.png =x400)
 
 
 ### Normal People
 《正常人》18年的小说，英剧。男主缺乏安全感，渴望外界认可。女主家庭暴力阴影下成长，觉得自己不值得爱。总之书名叫正常人，肯定有不正常才有正常。和《一天》一样，男女主拉扯多年。
-![Normal_People_novel.png](/assets/image/english_novel_1/Normal_People_novel.png)![Normal_People_movie.png](/assets/image/english_novel_1/Normal_People_movie.png)
+![Normal_People_novel.png](/assets/image/english_novel_1/Normal_People_novel.png =x400)![Normal_People_movie.png](/assets/image/english_novel_1/Normal_People_movie.png =x400)
 
 ### Educated
 这是一部回忆录，还没改编影视，但是最近几年非常火。中文版翻译为《你当像鸟飞往你的山》，出自圣经。讲述一个摩门教女孩如何逃离原生家庭。现代人都在从原来的环境中成长出来，组建新的家庭。但是书里面的原生家庭非常极端，所以冲突非常强烈。这是本回忆录，而且作者有意识的刻画了回忆的模糊，但这更加让人能感受到故事的真实。
 
-![Educated_novel.png](/assets/image/english_novel_1/Educated_novel.png)
+![Educated_novel.png](/assets/image/english_novel_1/Educated_novel.png =x400)
 
 
 
