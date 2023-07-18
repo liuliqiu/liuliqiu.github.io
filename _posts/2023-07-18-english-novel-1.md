@@ -18,7 +18,7 @@ tags:
 
 ### Wonder
 《奇迹男孩》，2012年出版的一部很感人的儿童读物。讲的是一个有先天性脸部畸形的小孩第一年上学的故事。故事是多个视角的，所以你可以通过多个视角来帮助你理解发生的事情，多视角也是让你理解他人。很适合入门。
-![Wonder_novel.png](/assets/image/english_novel_1/Wonder_novel.png)![Wonder_movie.png](/assets/image/english_novel_1/Wonder_movie.png)
+![Wonder_novel.png](/assets/image/english_novel_1/Wonder_novel.png  =x400)![Wonder_movie.png](/assets/image/english_novel_1/Wonder_movie.png =x400)
 
 ### The Boy in the Striped Pajamas
 
