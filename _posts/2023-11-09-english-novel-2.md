@@ -21,13 +21,18 @@ Hercule Poirot（赫尔克里·波洛）是 Agatha Christie （阿加莎·克里
 
 阿婆的小说故事性很强，所以有很多的影视改编。其中David Suchet（大卫·苏切）版的电视剧集Agatha Christie's Poirot（大侦探波洛）改编了全部33本长篇小说和大部分短片故事。从1989年第一季到2013年第十三季总共13季70集。其中第一、二、三、五季总共38集，除了第二季的第一集和最后一集之外的36集是短篇故事改编，每集50分钟。这些短篇故事主要选自四本故事集Poirot Investigates（首相绑架案/波洛探案集）、Poirot's Early Cases（蒙面女人/波洛的早期案件）、Murder in the Mews and Other Stories（幽巷谋杀案）、The Adventure of the Christmas Pudding （雪地上的女尸）。第十三季第四集的The Labours of Hercules（赫尔克里的丰功伟绩）也是一本短篇故事集，从其中选出了五个短篇故事合成的长篇电视，剩下33集都是长篇小说改编，长篇基本上在90到100分钟每集。剧集基本上是比较忠实于原著的，短篇加了些情节填充时长，长篇会删减一些配角和支线压缩时长。目前我看完了第一季到第八季，以及第十二季，总共九季53集，剩余四季17集。
 
+<div style="clear:both" />
 ![poirot_s1](/assets/image/poirot/poirot_s1.png)
+<div style="clear:both" />
+
 
 除了这个版本的剧集以外，还有日本的动画片《名侦探波洛和马普尔小姐》39集以及法国的《阿加莎·克里斯蒂小型谋杀剧场》三季48集。这两部都并不限于 Poirot 的故事。
 
 电影方面最出名的是彼得·乌斯蒂诺夫出演的六部《尼罗河上的惨案》、《阳光下的罪恶》、《人性记录》、《古宅迷踪》、《三幕悲剧》、《死亡约会》。同时期还有1974年版的《东方快车谋杀案》
 
+<div style="clear:both" />
 ![Evil_Under_the_Sun](/assets/image/poirot/Evil_Under_the_Sun.png)
+<div style="clear:both" />
 
 
 最近几年肯尼思·布拉纳自导自演了三部《东方快车谋杀案》、《尼罗河上的惨案》、《威尼斯惊魂夜》。BBC出品了几部迷你剧，主要由编剧莎拉·菲尔普斯(Sarah Phelps)改编包括《无人生还》、《控方证人》、《无妄之灾》、《ABC谋杀案》、《灰马酒店》。
