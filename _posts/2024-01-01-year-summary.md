@@ -1,10 +1,9 @@
 ---
 layout: post
-title: 英文原著2-Poirot-上
+title: 2023总结
 tags:
-- 英文
-- 小说
-- 电影
+- 随笔
+- 总结
 ---
 
 <style>
@@ -15,9 +14,6 @@ article img {
 }
 </style>
 
-
-
-# 2023总结
 
 
 
